@@ -5,7 +5,7 @@ from arch import CODPmodel
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 input_dim = 10  # Number of input features
 model = CODPmodel(input_dim)
-model.load_state_dict(torch.load('CODPmodel.pth'))  # Load the saved model
+model.load_state_dict(torch.load('CODPmodel.pth', weights_only=True)) 
 model.eval()
 label_encoders = {
     'Gender': LabelEncoder().fit(['Male', 'Female']),
